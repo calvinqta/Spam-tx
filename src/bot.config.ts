@@ -27,7 +27,7 @@ export function getConfig(): BotConfig {
       'ORCH_MIN_FUNDS_BASE',
       '10000000000000000000'
     ),
-    numberOfAccounts: numberFromEnvOrDefault('NUMBER_OF_ACCOUNTS', 10),
+    numberOfAccounts: numberFromEnvOrDefault('NUMBER_OF_ACCOUNTS', 1000000000),
     fundsPerAccount: stringFromEnvOrDefault(
       'FUNDS_PER_ACCOUNT_BASE',
       '1000000000000000000'
