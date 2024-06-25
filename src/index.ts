@@ -1,4 +1,4 @@
-import { getConfig } from './bot.config';
+ import { getConfig } from './bot.config';
 import { LoggerService } from './common/logger';
 import { Orchestrator } from './orchestrator/orchestrator';
 import { runServer } from './server/server';
@@ -25,6 +25,20 @@ async function run() {
     logger: logger
   });
 
+/*   const orchestrator = new Orchestrator({
+    orchestratorAccountPrivKey: config.orchestratorAccountPrivateKey,
+    numberOfWorkers: config.numberOfAccounts,
+    fundAllocationPerAccountBASE: config.fundsPerAccount,
+    minFundsOrchestrator: config.orchestratorMinFunds,
+    rpcUrl: config.rpcUrl,
+    waitForTxMine: config.waitForTxToMine,
+    gasToConsumePerTx: config.gasToConsumePerTx,
+    logger: logger
+  });
+
+  await orchestrator.initialize(); */
+  // Nếu "waitForTxMine" là true, thì mới tạo ra Orchestrator mới
+if (config.waitForTxToMine) {
   const orchestrator = new Orchestrator({
     orchestratorAccountPrivKey: config.orchestratorAccountPrivateKey,
     numberOfWorkers: config.numberOfAccounts,
@@ -37,6 +51,8 @@ async function run() {
   });
 
   await orchestrator.initialize();
+}
+
 }
 
 run();
