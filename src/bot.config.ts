@@ -32,7 +32,7 @@ export function getConfig(): BotConfig {
       '10000000000000'
     ),
     waitForTxToMine: booleanFromEnvOrDefault('WAIT_FOR_TX_MINE', true),
-    gasToConsumePerTx: stringFromEnvOrDefault('GAS_CONSUME_PER_TX', '100000'),
+    gasToConsumePerTx: stringFromEnvOrDefault('GAS_CONSUME_PER_TX', '10000000000'),
     logLevel: logLevelFromEnvOrDefault('LOG_LEVEL', 'info'),
     serverPort: numberFromEnvOrDefault('SERVER_PORT', 8080)
   };
