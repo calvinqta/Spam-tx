@@ -24,12 +24,12 @@ export function getConfig(): BotConfig {
     orchestratorAccountPrivateKey: stringFromEnvOrThrow('ORCH_PRIV_KEY'),
     orchestratorMinFunds: stringFromEnvOrDefault(
       'ORCH_MIN_FUNDS_BASE',
-      '10000000000000000000'
+      '100000000000000'
     ),
     numberOfAccounts: numberFromEnvOrDefault('NUMBER_OF_ACCOUNTS', 100000000),
     fundsPerAccount: stringFromEnvOrDefault(
       'FUNDS_PER_ACCOUNT_BASE',
-      '1000000000000000000'
+      '10000000000000'
     ),
     waitForTxToMine: booleanFromEnvOrDefault('WAIT_FOR_TX_MINE', true),
     gasToConsumePerTx: stringFromEnvOrDefault('GAS_CONSUME_PER_TX', '100000'),
